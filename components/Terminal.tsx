@@ -1,6 +1,9 @@
 "use client"
 
 import React, { useState, useEffect } from 'react';
+import { SiNextdotjs, SiVercel, SiTypescript, SiWebstorm } from "react-icons/si";
+import Image from 'next/image';
+import webstorm from '../public/images/webstorm.png'
 
 type Command = {
     command: string;
@@ -81,7 +84,14 @@ const Terminal: React.FC = () => {
 
                 <div className="text text-[#56bdc9] font-bold pr-2">
                     <p>Welcome to my portfolio, type 'help' to get started</p>
-                    <p>made around 24-8-2024</p>
+                    <div className="inline-flex">
+                        <p>Made with </p>
+                        {/*<SiWebstorm className="mx-1 text-blue-400 mt-1"/>*/}
+                        <Image src={webstorm} className="mx-1" width={23} height={25} alt="webstorm"/>
+                        <SiTypescript className="mx-1 text-blue-500 mt-1"/>
+                        <SiNextdotjs className="mx-1 text-white mt-1"/>
+                        <SiVercel className="mx-1 text-black mt-1" />
+                    </div>
                 </div>
 
                 {history.map((item, index) => (
@@ -105,4 +115,5 @@ const Terminal: React.FC = () => {
     );
 };
 
+// @ts-ignore
 export default Terminal;
