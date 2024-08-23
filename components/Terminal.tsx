@@ -20,8 +20,8 @@ const Terminal: React.FC = () => {
         const lowerCommand = command.toLowerCase();
         const output = executeCommand(lowerCommand);
 
-        setIsTyping(true);  // Start typing effect
-        setDisplayedResult('');  // Clear previous result display
+        setIsTyping(true);
+        setDisplayedResult('');
 
         const newCommand = { command: "/ " + command, result: output };
         setHistory([...history, newCommand]);
@@ -68,7 +68,6 @@ const Terminal: React.FC = () => {
 
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
-            // Focus on the input field when any key is pressed
             if (inputRef.current) {
                 inputRef.current.focus();
             }
@@ -86,7 +85,6 @@ const Terminal: React.FC = () => {
                     <p>Welcome to my portfolio, type 'help' to get started</p>
                     <div className="inline-flex">
                         <p>Made with </p>
-                        {/*<SiWebstorm className="mx-1 text-blue-400 mt-1"/>*/}
                         <Image src={webstorm} className="mx-1" width={23} height={25} alt="webstorm"/>
                         <SiTypescript className="mx-1 text-blue-500 mt-1"/>
                         <SiNextdotjs className="mx-1 text-white mt-1"/>
